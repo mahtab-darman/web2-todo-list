@@ -16,13 +16,13 @@ setting.addEventListener('click',()=>{
 filterTheme.addEventListener('click', (e) =>{
         switch(e.target.value){
             case "theme1":
-                window.document.styleSheets[0].ownerNode.innerHTML = `<link rel="stylesheet" href="style1.css" />`;
+                window.document.styleSheets[0].ownerNode.innerHTML = `<link rel="stylesheet" href="./assets/css/style1.css" />`;
                 break;
             case "theme2":
-                window.document.styleSheets[0].ownerNode.innerHTML = `<link rel="stylesheet" href="style2.css" />`;
+                window.document.styleSheets[0].ownerNode.innerHTML = `<link rel="stylesheet" href="./assets/css/style2.css" />`;
                 break;
             case "theme3":
-                window.document.styleSheets[0].ownerNode.innerHTML = `<link rel="stylesheet" href="style3.css" />`;
+                window.document.styleSheets[0].ownerNode.innerHTML = `<link rel="stylesheet" href="./assets/css/style3.css" />`;
                 break;
 
         };
