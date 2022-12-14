@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Todo List</title>
+	<!-- CSS Import -->
+	<link rel="stylesheet" href="style3.css" />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+	<!-- App Wrapper -->
+	<main class="app">
+		<div class="menu">
+			<section class="greeting">
+				<h2 class="title">
+					Welcome Back, <input type="text" id="name" placeholder="Your Name" maxlength="15" />
+				</h2>
+			</section>
+			<section class="setting">
+				<form>
+					<label for="checkbox">
+						<i class="material-icons">settings</i>
+					</label>
+					<input type="checkbox" name="setting" id="checkbox" value="check">
+				</form>
+				<select class="theme">
+					<option value="theme1">theme 1</option>
+					<option value="theme2">theme 2</option>
+					<option value="theme3">theme 3</option>
+				</select>
+			</section>
+		</div>
+
+		<!-- ------------------------------------------------------------------------- -->
+		
+		<!-- New Todo -->
+		<section class="create-todo">
+			<h3>CREATE A TODO</h3>
+			<form id="new-todo-form">
+				<h4>What's on your todo?</h4>
+				<input type="text" placeholder="Give Me Your Task :)"name="content"id="content" />
+				
+				<h4>Pick a category</h4>
+				<div class="options">
+					<label>
+						<input type="radio" name="category" id="category1" value="business" /> 
+						<span class="bubble business"></span>
+						<div>Business</div>
+					</label>
+					<label>
+						<input type="radio" name="category" id="category2" value="personal" />
+						<span class="bubble personal"></span>
+						<div>Personal</div>
+					</label>
+					<label>
+						<input type="radio" name="category" id="category3" value="other" />
+						<span class="bubble other"></span>
+						<div>Others</div>
+					</label>
+				</div>
+
+				<input type="submit" value="Add todo" />
+			</form>
+		</section>
+		<!-- ------------------------------------------------------------------------------------------- -->
+
+		<!-- Todo List -->
+		<section class="todo-list">
+			<div class="todo-header">
+				<h3>TODO LIST</h3>
+				<div>
+					<form>
+						<label for="categoreis">Filter :</label>
+						<select class="filter">
+							<option value="all">All</option>
+							<option value="personal">Personal</option>
+							<option value="business">Business</option>
+							<option value="other">Other</option>
+							<option value="completed">Completed</option>
+							<option value="uncompleted">Uncompleted</option>
+						</select>
+					</form>
+					<button class="clear">clear completed</button>
+				</div>
+			</div>
+			
+			<div class="list" id="todo-list"></div>
+		</section>
+		<!-- ------------------------------------------------------------------------------------------ -->
+	</main>
+
+	<!-- JS Import -->
+	<script src="main.js"></script>
+	<script src="theme.js"></script>
+</body>
+</html>

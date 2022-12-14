@@ -1,0 +1,231 @@
+/* Variables */
+:root {
+	--primary: #ae0b0beb;
+	--business: #fc15bee1;
+	--personal: var(--primary);
+	--other:rgb(255, 115, 0);
+	--light: rgb(196, 38, 38);
+	--lighter:rgb(236, 236, 236);
+	--grey: #888;
+	--dark: #313154;
+	--danger: #ff0400;
+
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+	--business-glow: 0px 0px 4px rgba(250, 3, 254, 0.75);
+	--personal-glow: 0px 0px 4px rgb(255, 0, 0);
+	--other-glow: 0px 0px 4px rgba(232, 138, 76, 0.75);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'montserrat', sans-serif;
+}
+/* -------------------------------------------------------------------------------- */
+input:not([type="radio"]):not([type="checkbox"]), button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: initial;
+}
+
+body {
+	height: 100vh;
+	background-image: url("2.jpg");
+	color: var(--light);
+}
+section {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+/* -------------------------------------------------------------------------------------- */
+.menu{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+.setting{
+	display: flex;
+	flex-direction: row;
+	font-size: 30px;
+	font-weight: 300;
+	color: var(--light);
+}
+.setting label{
+	cursor: pointer;
+	transition: 0.5s;
+}
+.theme{
+	display: none;
+	padding: 5px 20px;
+	margin: 0 5px;
+}
+.create-todo h3 {
+	color: var(--light);
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.create-todo h4 {
+	color: var(--light);
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+.greeting .title {display: flex;}
+
+.greeting .title input {
+	margin-left: 0.5rem;
+	color: var(--light);
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+/* ------------------------------------------------------------------------------ */
+.create-todo input[type="text"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--dark);
+	background-color: var(--lighter);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1.5rem;
+}
+
+.create-todo .options {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 15px;
+	margin-bottom: 1.5rem;
+}
+
+.create-todo .options label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--lighter);
+	padding: 1.5rem;
+	box-shadow: var(--shadow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+/* ------------------------------------------------------------------ */
+
+ input[type="radio"],input[type="checkbox"] {display: none;}
+
+.bubble {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 999px;
+
+}
+.bubble.business{border: 2px solid var(--business);box-shadow: var(--business-glow);}
+.bubble.other {border: 2px solid var(--other);box-shadow: var(--other-glow);}
+.bubble.personal {border:2px solid var(--personal);box-shadow: var(--personal-glow);}
+
+.bubble::after {
+	content: '';
+	display: block;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	border-radius: 999px;
+	transition: 0.2s ease-in-out;
+}
+.bubble.business::after{background-color: var(--business);box-shadow: var(--business-glow);}
+
+.bubble.personal::after {background-color: var(--personal);box-shadow: var(--personal-glow);}
+.bubble.other::after {background-color: var(--other);box-shadow: var(--other-glow);}
+
+input:checked ~ .bubble::after {width: 10px;height: 10px;opacity: 1;}
+
+/* -------------------------------------------------------------- */
+
+.create-todo .options label div {color: var(--dark);font-size: 1.125rem;margin-top: 1rem;}
+
+.create-todo input[type="submit"] {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: #FFF;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: var(--personal);
+	/* box-shadow: var(--personal-glow); */
+	box-shadow: 2px 2px 10px;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.create-todo input[type="submit"]:hover {opacity: 0.75;}
+.todo-list .list {margin: 1rem 0;}
+
+.todo-list .todo-header{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+.todo-header > div{
+	display: flex;
+}
+.todo-header button {
+	color: var(--lighter);
+	background-color: var(--primary);
+	border-radius: 8px;
+	padding: 8px 26px;
+	margin: 0 5px;
+	font-size: 0.75em;
+	cursor: pointer;
+}
+.todo-header select{
+	padding: 10px 20px;
+	font-size: 0.75em;
+}
+.todo-header label{
+	font-size: 1.25em;
+	font-weight: 300;
+}
+
+.todo-list .todo-item {
+	display: flex;
+	align-items: center;
+	background-color: var(--lighter);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1rem;
+}
+
+.todo-item label {display: block;margin-right: 1rem;cursor: pointer;}
+.todo-item .todo-content {flex: 1 1 0%;}
+.todo-item .todo-content input {width: 100%;color: var(--dark);font-size: 1.125rem;}
+.todo-item .actions {display: flex;align-items: center;}
+
+.todo-item .actions button {
+	display: block;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #FFF;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.todo-item .actions button:hover {opacity: 0.75;}
+.todo-item .actions .edit {margin-right: 0.5rem;background-color: var(--primary);}
+.todo-item .actions .delete {background-color: var(--danger);}
+.todo-item.done .todo-content input {text-decoration: line-through;color: var(--grey);}
